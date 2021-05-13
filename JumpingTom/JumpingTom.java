@@ -6,8 +6,17 @@ public class JumpingTom{
  public static void main(String[] args){
    Scanner scn = new Scanner(System.in);
    System.out.print("Enter the distance in meters : ");
-   double distance = scn.nextDouble();
-   makeTomJump(new BigDecimal(String.valueOf(distance)));
+   try{
+	double distance = scn.nextDouble();
+   	if(distance > 0 || !(distance < 0)){
+      	  makeTomJump(new BigDecimal(String.valueOf(distance)));
+   	}else{
+      	   System.err.println("Invalid Input!");
+        }
+   }catch(InputMismatchException err){
+     System.out.println("Should be a number!");
+   }
+
  }
 
  public static void makeTomJump(BigDecimal distanceToJump){
