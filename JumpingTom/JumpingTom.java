@@ -6,13 +6,13 @@ public class JumpingTom{
  public static void main(String[] args){
    Scanner scn = new Scanner(System.in);
    System.out.print("Enter the distance in meters : ");
-   var distance = scn.nextDouble();
+   double distance = scn.nextDouble();
    makeTomJump(new BigDecimal(String.valueOf(distance)));
  }
 
  public static void makeTomJump(BigDecimal distanceToJump){
     
-    var roundedValue = distanceToJump.setScale(0, RoundingMode.UP).intValue();
+    int roundedValue = distanceToJump.setScale(0, RoundingMode.UP).intValue();
     int restPeriod = 0;
     int hopCount = 0;
 
