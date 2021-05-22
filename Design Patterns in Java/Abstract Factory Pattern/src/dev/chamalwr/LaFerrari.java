@@ -1,3 +1,5 @@
+package dev.chamalwr;
+
 public class LaFerrari implements VehicleFunctions {
     @Override
     public void drive() {

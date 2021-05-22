@@ -1,3 +1,5 @@
+package dev.chamalwr;
+
 public class Lamborghini implements VehicleFunctions{
 
     @Override
