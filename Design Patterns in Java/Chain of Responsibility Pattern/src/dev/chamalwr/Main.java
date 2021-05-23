@@ -26,6 +26,8 @@ public class Main {
         //Sending a valid email
         starterHandler.checkMail(internalMail);
 
+        System.out.println();
+
         //Sending a email from non-domain email
         starterHandler.checkMail(emailFromOutside);
     }
