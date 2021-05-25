@@ -10,7 +10,7 @@ module.exports = class DomainHandler extends EmailHandler{
                 this.successorHandler.checkMail(email)
             }
         }else {
-            console.log("Receiver Not Found on the Domain!")
+            console.log("This is an External Email!")
         }
     }
 }
