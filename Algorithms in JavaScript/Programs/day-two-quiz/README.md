@@ -70,7 +70,7 @@ Output will be like this
 ]
 ```
 
-## 3. Repetition Character Find
+## 4. Repetition Character Find
 
 When a sentence is given to the function it will calculate what are the words that keeps repeating and give a summary of the results
 
