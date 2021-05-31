@@ -59,5 +59,5 @@ app.post('/repetition', (req, res) => {
 
     let summary = repetitionWordFinder.find(sentence)
 
-    res.send(JSON.stringify(summary))
+    res.send(summary)
 })
