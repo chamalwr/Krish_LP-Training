@@ -14,11 +14,10 @@
 </head>
 <body>
     <h1 align="center">Sorted Name List</h1>
-     <script>
-        <div>
-           <%= console.log(people) %>
-        </div>
-     </script>
-
+    <ol>
+    <% for(var key in people) {%>
+            <li><%= people[key] %></li>
+    <% } %>
+    </ol>
 </body>
 </html>

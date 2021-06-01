@@ -44,6 +44,7 @@ app.post('/upload', (req, res) => {
 
 app.get('/sortedNames', (req, res) => {
     let fileHandler = new FileHandler()
-    let fileData = fileHandler.openFile(__dirname + '/files/' + "namesTwo.txt")
-    res.render('nameViewer.ejs', {people: fileData})
+    let peopleData = fileHandler.openFile( __dirname + '/files/' + "namesTwo.txt")
+    console.log(peopleData)
+    res.render('nameViewer', {people: peopleData})
 })
