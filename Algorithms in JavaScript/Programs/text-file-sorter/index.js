@@ -38,13 +38,19 @@ app.post('/upload', (req, res) => {
     let savePromise = textFile.mv(uploadPath, function(err) {
         if (err)
             return res.status(500).send(err);
-        res.send('File uploaded!');
+        res.status(200).redirect(`/sortedNames?fileName=${textFile.name}`)
     });
 })
 
 app.get('/sortedNames', (req, res) => {
     let fileHandler = new FileHandler()
-    let peopleData = fileHandler.openFile( __dirname + '/files/' + "namesTwo.txt")
+    let fileName = req.query.fileName
+
+    if (fileName === undefined){
+        res.status(404).send("Text File Not Found")
+    }
+
+    let peopleData = fileHandler.openFile( __dirname + '/files/' + fileName)
     console.log(peopleData)
     res.render('nameViewer', {people: peopleData})
 })
