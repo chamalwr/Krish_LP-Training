@@ -27,6 +27,6 @@ node index.js
 
 And click upload, The the Sorted Name List will appear as below
 
-![Sorted Name List](./img/NameSorter04.png)
+![Sorted Name List](./img/NameSorter04.PNG)
 
 
