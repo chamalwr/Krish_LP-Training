@@ -8,10 +8,24 @@ module.exports = class Util {
             }
         );
     }
-    nameSort(data){
+
+    removeSpaces(arr){
+         let spaceLessArray = []
+         for(let i = 0; i < arr.length; i++){
+             if (arr[i].length <= 1){
+                 continue
+             }else {
+                 spaceLessArray.push(arr[i])
+             }
+         }
+         return spaceLessArray;
+    }
+
+    nameSort(data, separator){
         let processedData = data.toString()
         processedData = this.toTitleCase(processedData)
-        processedData = processedData.split("\n").sort()
+        processedData = processedData.split(separator)
+        processedData = this.removeSpaces(processedData).sort()
         return processedData
     }
 }
