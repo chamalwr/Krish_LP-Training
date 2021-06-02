@@ -8,10 +8,23 @@
 <body>
 
 
-    <label align = "center">Select Your Text File</label>
     <form action="/upload" enctype="multipart/form-data" method="POST" name="txtFileAdder">
         <div class="form-group">
-            <input class="form-control-file" accept=".txt" type="file" name="textFile"/>
+            <label align = "center" for="usrFile">Select Your Text File</label>
+            <input class="form-control-file" accept=".txt" type="file" name="textFile" id="usrFile"/>
+        </div>
+        <div class="form-group">
+            <label class="form-group" for="separator">Choose Separator</label>
+            <select name="separators" id="separator" onchange="if (this.selectedIndex === 3)
+                                                     {this.form['customSeparator'].style.visibility='visible'} else {
+                                                      {this.form['customSeparator'].style.visibility='hidden'}}">
+                }
+                <option value="NL">New Line</option>
+                <option value="CM">Comma</option>
+                <option value="FL">Full Stop</option>
+                <option value="OT">Other</option>
+            </select>
+            <input type="text" name="customSeparator" style="visibility:hidden">
         </div>
         <input class="form-control-file" type="submit" value="Upload Text File"/>
     </form>

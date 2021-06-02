@@ -21,10 +21,10 @@ module.exports = class Util {
          return spaceLessArray;
     }
 
-    nameSort(data){
+    nameSort(data, separator){
         let processedData = data.toString()
         processedData = this.toTitleCase(processedData)
-        processedData = processedData.split("\n")
+        processedData = processedData.split(separator)
         processedData = this.removeSpaces(processedData).sort()
         return processedData
     }
