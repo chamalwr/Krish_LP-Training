@@ -9,7 +9,7 @@ module.exports = class VehicleFactory{
             case "racing car":
                 return new racingCar("Lamborghini", "Sián FKP 37", "770HP", "$3,700,000",
                     "V12, 60°, MPI (Multi Point Injection)")
-            case "commuter Car":
+            case "commuter car":
                 return new commuterCar("Toyota", "Prius", "XLE", "5", "Automatic",
                     "Hybrid")
             case "truck":
