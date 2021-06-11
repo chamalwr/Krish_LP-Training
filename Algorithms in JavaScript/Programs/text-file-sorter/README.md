@@ -15,6 +15,8 @@ node index.js
 ```
 docker pull chamalwr/namesorter
 
+docker run -p 3000:3000 chamalwr/namesorter
+
 ```
 
 
