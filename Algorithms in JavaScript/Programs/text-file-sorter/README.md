@@ -10,6 +10,15 @@ npm install
 node index.js
 ```
 
+## Run in Docker 
+
+```
+docker pull chamalwr/namesorter
+
+docker run -p 3000:3000 chamalwr/namesorter
+
+```
+
 
 ## How to Use
 
