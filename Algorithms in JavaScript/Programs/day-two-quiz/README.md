@@ -1,5 +1,21 @@
 # NodeJS Questions
 
+## How to run
+
+```
+npm install
+
+node index.js
+```
+
+## Run in Docker 
+
+```
+docker pull chamalwr/daytwoapp
+
+docker run -p 3000:3000 chamalwr/daytwoapp
+
+```
 ## 1. Anagram Validator
 
 When two words are given it checks whether it is an anagram or nor
@@ -13,7 +29,7 @@ Response Body Should be
 ```sh
 {
     "wordOne" : "SILENT",
-    "wordTwo" : "LISTEN"
+    "wordTwo" : "LISTESN"
 }
 ```
 Output will be like this
