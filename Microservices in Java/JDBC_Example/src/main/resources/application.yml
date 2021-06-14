@@ -1,0 +1,18 @@
+# DB Settings
+spring:
+  datasource:
+    password: samplePass
+    username: testUser
+    url: jdbc:postgresql://localhost:5432/MSTraining
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: update
+# Actuator config
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

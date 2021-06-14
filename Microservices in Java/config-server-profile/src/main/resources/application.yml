@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/chamalwr/reimagined-dollop
+          search-paths:
+            - 'service-config/*service'
+          default-label: main
+  jpa:
+    hibernate:
+      ddl-auto: update
+server:
+  port: 8192
