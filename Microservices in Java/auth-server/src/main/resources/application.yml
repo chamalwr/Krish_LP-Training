@@ -1,0 +1,19 @@
+server:
+  port: 8282
+
+#spring:
+#  security:
+#    user:
+#      name: chamalwr
+#      password: samplePass
+#      roles: ADMIN, USER
+#security:
+#  oauth2:
+#    client:
+#      client-secret: pin
+#      client-id: mobile
+#      access-token-validity-seconds: 3600
+#      authorized-grant-types: refresh_token, authorization_code, password, client_credentials
+#      scope: READ, WRITE
+#    authorization:
+#      check-token-access: permitAll

@@ -1,0 +1,4 @@
+dev\chamalwr\rentmodel\model\customer\Customer.class
+dev\chamalwr\rentmodel\model\customer\Loyality.class
+dev\chamalwr\rentmodel\model\vehicle\Vehicle.class
+dev\chamalwr\rentmodel\model\rent\Rent.class
