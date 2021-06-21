@@ -1,0 +1,23 @@
+[
+    {
+      "id": "PR-282",  
+      "name": "Brown",
+      "type": "Dog",
+      "age": 12,
+      "breed": "German Shepherd",
+      "country": "German",
+      "owner": "John",
+      "cause": "Headache"
+    },
+    {
+      "id": "PR-283",  
+      "name": "Mickey",
+      "type": "Bird",
+      "age": 2,
+      "breed": "Psittaciform",
+      "country": "Brazil",
+      "owner": "Rio",
+      "cause": "Talkative"
+    }
+      
+]

@@ -6,8 +6,7 @@ import { OwnerListComponent } from './owner-list/owner-list.component';
 import { OwnerComponent } from './owner.component';
 
 const routes: Routes = [
-  { path: '', component: OwnerComponent,   
-  
+  { path: '', component: OwnerComponent,
   children: [
     { path: 'create-owner', component: OwnerCreateComponent},
     { path: 'edit-owner', component: OwnerEditComponent},

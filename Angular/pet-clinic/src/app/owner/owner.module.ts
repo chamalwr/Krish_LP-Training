@@ -6,6 +6,7 @@ import { OwnerComponent } from './owner.component';
 import { OwnerListComponent } from './owner-list/owner-list.component';
 import { OwnerCreateComponent } from './owner-create/owner-create.component';
 import { OwnerEditComponent } from './owner-edit/owner-edit.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { OwnerEditComponent } from './owner-edit/owner-edit.component';
   ],
   imports: [
     CommonModule,
-    OwnerRoutingModule
+    OwnerRoutingModule,
+    FormsModule
   ]
 })
 export class OwnerModule { }

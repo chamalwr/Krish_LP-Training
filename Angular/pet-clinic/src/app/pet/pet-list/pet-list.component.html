@@ -1,1 +1,45 @@
-<p>pet-list works!</p>
+<div class="container" *ngIf = "petsData.length">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-8"><h2>Pet <b>List</b></h2></div>
+                    <div class="col-sm-4">
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Pet Name</th>
+                        <th>Pet Type</th>
+                        <th>Age</th>
+                        <th>Breed (if Applicable)</th>
+                        <th>Country of Origin</th>
+                        <th>Owner Name</th>
+                        <th>Cause</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let pet of petsData" >
+                        <td> {{pet.id}} </td>
+                        <td> {{pet.name}} </td>
+                        <td> {{pet.type}} </td>
+                        <td> {{pet.age}} </td>
+                        <td> {{pet.breed}} </td>
+                        <td> {{pet.country}} </td>
+                        <td> {{pet.owner}} </td>
+                        <td> {{pet.cause}} </td>
+                        <td>
+                            <button type="button" class="btn btn-success" (click)="editPet(pet.id)">Edit</button>
+                            <button type="button" class="btn btn-danger" (click)="deletePet(pet.id)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>

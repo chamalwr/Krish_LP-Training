@@ -1,1 +1,49 @@
-<p>pet-create works!</p>
+<br/><br/><br/>
+<div class="container">
+
+    <form #petForm="ngForm" (ngSubmit)="addPet(petForm.value)">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Pet Name</label>
+                <input type="email" class="form-control" name="name" ngModel>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Type</label>
+            <input type="text" class="form-control" name="type" ngModel>
+        </div>
+
+        <div class="form-group">
+        <label>Age</label>
+        <input type="text" class="form-control" name="age" ngModel>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Breed</label>
+                <input type="text" class="form-control" name="breed" ngModel>
+            </div>
+
+            <div class="form-group col-md-2">
+                <label>Country</label>
+                <input type="text" class="form-control" name="country" ngModel>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Owner</label>
+            <input type="text" class="form-control" name="owner" ngModel>
+        </div>
+
+        <div class="form-group">
+            <label>Cause</label>
+            <input type="text" class="form-control" name="cause" ngModel>
+        </div>
+
+        <br/>
+        <div class = "form-group">
+            <button type="submit" class="btn btn-primary">Add Pet</button>
+        </div>
+    </form>
+</div>

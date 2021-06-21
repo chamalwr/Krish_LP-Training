@@ -1,1 +1,49 @@
-<p>pet-edit works!</p>
+<br/><br/><br/>
+<div class="container">
+
+  <form #petForm="ngForm" (ngSubmit)="updatePet(petForm.value)">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Pet Name</label>
+        <input type="text" class="form-control" name="name" [ngModel]="name">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Type</label>
+      <input type="text" class="form-control" name="type" [ngModel] = "type">
+    </div>
+
+    <div class="form-group">
+      <label>Age</label>
+      <input type="text" class="form-control" name="age" [ngModel] = "age">
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Breed</label>
+        <input type="text" class="form-control" name="breed" [ngModel]="breed">
+      </div>
+
+      <div class="form-group col-md-2">
+        <label>Country</label>
+        <input type="text" class="form-control" name="country" [ngModel] = country>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Owner</label>
+      <input type="text" class="form-control" name="owner" ngModel [ngModel] = owner>
+    </div>
+
+    <div class="form-group">
+      <label>Cause</label>
+      <input type="text" class="form-control" name="cause" [ngModel]="cause" >
+    </div>
+
+    <br/>
+    <div class = "form-group">
+      <button type="submit" class="btn btn-primary">Update Pet</button>
+    </div>
+  </form>
+</div>

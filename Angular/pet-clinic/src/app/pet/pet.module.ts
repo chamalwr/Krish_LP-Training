@@ -6,6 +6,7 @@ import { PetComponent } from './pet.component';
 import { PetListComponent } from './pet-list/pet-list.component';
 import { PetCreateComponent } from './pet-create/pet-create.component';
 import { PetEditComponent } from './pet-edit/pet-edit.component';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { PetEditComponent } from './pet-edit/pet-edit.component';
   ],
   imports: [
     CommonModule,
-    PetRoutingModule
+    PetRoutingModule,
+    FormsModule
   ]
 })
 export class PetModule { }
