@@ -1,0 +1,18 @@
+[
+  {
+    "id": "OW-927XX",
+    "fullName": "John Doe",
+    "email": "johndoe@gmail.com",
+    "address": "738, Queen's Street, London",
+    "contactNumber": "+4744539372",
+    "petId": "PR-282"
+  },
+  {
+    "id": "OW-562MK",
+    "fullName": "Alexander Vladimir",
+    "email": "alex@mail.ru",
+    "address": "Winter Hall, Kremlin, Moscow",
+    "contactNumber": "+7635539565",
+    "petId": "PR-873"
+  }
+]
