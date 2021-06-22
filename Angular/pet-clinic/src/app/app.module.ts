@@ -16,7 +16,7 @@ import { HomeComponentComponent } from './home-component/home-component.componen
     AppRoutingModule,
     RouterModule.forRoot([
       {path : "home", component: HomeComponentComponent},
-      {path: "", redirectTo: "home", pathMatch: "full"}
+      {path: '', redirectTo: 'home', pathMatch: 'full'}
     ])
   ],
   providers: [],

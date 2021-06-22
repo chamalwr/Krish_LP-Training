@@ -12,9 +12,4 @@ export class OwnerComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  listOwners(){
-    this.router.navigate(['/list-owner'])
-  }
-
 }

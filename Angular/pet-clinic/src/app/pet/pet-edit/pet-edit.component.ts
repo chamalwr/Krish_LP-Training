@@ -8,17 +8,17 @@ import {Pet} from '../../shared/Pet.model';
   styleUrls: ['./pet-edit.component.scss']
 })
 export class PetEditComponent implements OnInit {
-  id: string | undefined;
-  name: string | undefined;
-  type: string | undefined;
-  age: string | undefined;
-  breed: string | undefined;
-  country: string | undefined;
-  owner: string | undefined;
-  cause: string | undefined;
+  id = '';
+  name = '';
+  type = '';
+  age = '';
+  breed = '';
+  country = '';
+  owner = '';
+  cause = '';
 
   private sub: any;
-  constructor(private router: ActivatedRoute) {
+  constructor(private router: ActivatedRoute, private navigateRouter: Router) {
   }
 
   ngOnInit(): void {
@@ -35,6 +35,7 @@ export class PetEditComponent implements OnInit {
   }
 
   updatePet(value: any) {
-
+    let updatedPet = new Pet(this.id, value.name, value.type, Number(value.age), value.breed, value.country, value.owner, value.cause);
+    this.navigateRouter.navigate(['../pet/list-pet', updatedPet]);
   }
 }
