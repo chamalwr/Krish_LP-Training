@@ -1,6 +1,10 @@
-export interface CreatePetDto{
-    name: string,
-    age: number,
-    breed: string,
-    type: string
+import { IsNotEmpty } from "class-validator"
+
+export class CreatePetDto{
+    @IsNotEmpty()
+    name: string;
+    age: number;
+    breed: string;
+    @IsNotEmpty()
+    type: string;
 }

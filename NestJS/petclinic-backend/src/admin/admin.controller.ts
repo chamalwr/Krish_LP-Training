@@ -1,7 +1,9 @@
-import { Body, Controller, Delete, Get, HttpCode, NotFoundException, Param, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, HttpCode, NotFoundException, Param, Post, UsePipes, ValidationPipe } from '@nestjs/common';
+import { AdminBranchValidationPipe } from './admin-branch-validation.pipe';
 import { Admin } from './admin.model';
 import { AdminService } from './admin.service';
 import { CreateAdmin } from './create-admin.dto';
+import { SearchAdmin } from './search-admin.dto';
 
 
 @Controller('admin')
@@ -20,6 +22,7 @@ export class AdminController {
     }
 
     @Post()
+    @UsePipes(new AdminBranchValidationPipe())
     addAdmin(@Body() createAdminDto: CreateAdmin): Admin {
         return this.adminService.addAnAdmin(createAdminDto);
     }
@@ -30,6 +33,12 @@ export class AdminController {
         if(!this.adminService.deleteById(id)){
             throw new NotFoundException(`Admin Not Found : ${id}`);
         }
+    }
+
+    @Get('branch')
+    @UsePipes(ValidationPipe)
+    getAdminsByStatus(@Body() searchAdminDto : SearchAdmin): Admin[] {
+        return this.adminService.getAdminsByBranch(searchAdminDto);
     }
     
 }

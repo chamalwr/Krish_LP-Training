@@ -1,7 +1,8 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { Admin } from './admin.model';
+import { Admin, Status } from './admin.model';
 import { CreateAdmin } from './create-admin.dto';
 import { v4 as uuid4} from 'uuid'
+import { SearchAdmin } from './search-admin.dto';
 
 @Injectable()
 export class AdminService {
@@ -16,6 +17,8 @@ export class AdminService {
             email: createAdminDto.email,
             contactNumber: createAdminDto.contactNumber,
             dateOfRegistered: new Date(),
+            branch: createAdminDto.branch,
+            status: Status.ACTIVE,
         }
         this.admins.push(newAdmin);
         return newAdmin;
@@ -24,7 +27,7 @@ export class AdminService {
     findById(id: string): Admin {
         let admin = this.admins.find(admin => admin.id === id);
         if(!admin){
-            throw new NotFoundException(`Admin for Id ${id.toString} not Found`);
+            throw new NotFoundException(`Admin not Found : ${id}`);
         }
         return admin;
     }
@@ -41,6 +44,12 @@ export class AdminService {
         }
 
         return false;
+    }
+
+    getAdminsByBranch(statusDto: SearchAdmin): Admin[]{
+        console.log(statusDto);
+        let adminsByStatus = this.admins.filter(admin => admin.branch === statusDto.branch);
+        return adminsByStatus;
     }
 
     isExists(id: string): boolean{

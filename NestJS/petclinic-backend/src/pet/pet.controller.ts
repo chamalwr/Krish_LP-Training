@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Param, Body, Delete, NotFoundException, HttpCode } from '@nestjs/common';
+import { Controller, Get, Post, Param, Body, Delete, NotFoundException, HttpCode, UsePipes, ValidationPipe } from '@nestjs/common';
 import { CreatePetDto } from './create-pet.dto';
 import { Pet } from './Pet.model';
 import { PetService } from './pet.service';
@@ -19,6 +19,7 @@ export class PetController {
   }
 
   @Post()
+  @UsePipes(ValidationPipe)
   addPet(@Body() createPetDao: CreatePetDto): Pet{
     return this.petService.addPet(createPetDao);
   }
