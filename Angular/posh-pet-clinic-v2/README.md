@@ -1,4 +1,10 @@
-# Petclinic
+# Pet Clinic Version 2
+
+## To Run this Project 
+1. NestJS Backend + MongoDB Atlas(No Configs) - https://github.com/chamalwr/Krish_LP-Training/tree/main/NestJS/petclinic-backend-mongoDB
+2. Running local Keycloak instance :8080 (Auth Guards disabled - for repository with Auth Guards - https://github.com/chamalwr/angular-app-with-keycloak)
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.0.
 
