@@ -1,7 +1,8 @@
-import { Body, Controller, Delete, Get, HttpCode, NotFoundException, Param, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, HttpCode, NotFoundException, Param, Post, Put } from '@nestjs/common';
 import { CreateOwner } from './create-owner.dto';
 import { Owner } from './owner.schema';
 import { OwnerService } from './owner.service';
+import { UpdateOwnerDto } from './update-owner.dto';
 
 @Controller('owner')
 export class OwnerController {
@@ -29,5 +30,10 @@ export class OwnerController {
         if(!this.ownerService.deleteOwnerById(id)){
             throw new NotFoundException(`Owner Not found : ${id}`);
         }
+    }
+
+    @Put()
+    updateOwner(@Body() updateOwnerDto: UpdateOwnerDto): Promise<Owner> {
+        return this.ownerService.updateOwner(updateOwnerDto);
     }
 }

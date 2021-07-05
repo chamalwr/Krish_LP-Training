@@ -4,6 +4,7 @@ import { Model } from "mongoose";
 import { CreatePetDto } from "./create-pet.dto";
 import { Pet, PetDocument } from "./pet.schema";
 import * as mongoose from 'mongoose';
+import { UpdatePetDto } from "./update-pet.dto";
 
 @Injectable()
 export class PetRepository {
@@ -34,5 +35,9 @@ export class PetRepository {
         let petId = mongoose.Types.ObjectId(id)
         let isDeleted = await this.petModel.deleteOne({ _id: petId })
         return (isDeleted.n === 1)  
+    }
+
+    async updatePet(updatePetDto: UpdatePetDto): Promise<Pet> {
+        return await this.petModel.findByIdAndUpdate(updatePetDto.id, updatePetDto);
     }
 }

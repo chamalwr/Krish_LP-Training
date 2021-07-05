@@ -2,6 +2,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreatePetDto } from './create-pet.dto';
 import { Pet } from  './pet.schema';
 import { PetRepository } from './pet-repository';
+import { UpdatePetDto } from './update-pet.dto';
 
 @Injectable()
 export class PetService {
@@ -27,5 +28,9 @@ export class PetService {
     async deletePetById(id: string): Promise<boolean> {
         let isDeleted = await this.petRepository.deletePetById(id);
         return isDeleted;
+    }
+
+    async updatePet(updatePetDto: UpdatePetDto): Promise<Pet> {
+        return await this.petRepository.updatePet(updatePetDto);
     }
 }

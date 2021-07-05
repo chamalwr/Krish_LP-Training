@@ -5,6 +5,7 @@ import { v4 as uuid4} from 'uuid'
 import { SearchAdmin } from './search-admin.dto';
 import { Admin } from './admin.schema';
 import { AdminRepository } from './admin-repository';
+import { UpdateAdminDto } from './update-admin.dto';
 
 @Injectable()
 export class AdminService {
@@ -30,5 +31,9 @@ export class AdminService {
     async deleteById(id: string): Promise<boolean>{
         let isDeleted = await this.adminRepository.delete(id);
         return isDeleted;
+    }
+
+    async updateAdmin(updateAdminDto: UpdateAdminDto): Promise<Admin> {
+        return await this.adminRepository.update(updateAdminDto);
     }
 }
