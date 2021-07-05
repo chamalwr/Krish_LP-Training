@@ -4,6 +4,7 @@ import { Model } from "mongoose";
 import { Owner, OwnerDocument } from "./owner.schema";
 import * as mongoose from 'mongoose';
 import { CreateOwner } from "./create-owner.dto";
+import { UpdateOwnerDto } from "./update-owner.dto";
 
 @Injectable()
 export class OwnerRepository {
@@ -26,6 +27,10 @@ export class OwnerRepository {
         let ownerId = mongoose.Types.ObjectId(id)
         let isDeleted = await this.ownerModel.deleteOne({ _id: ownerId })
         return (isDeleted.n === 1)  
+    }
+
+    async updateOwner(updateOwnerDto: UpdateOwnerDto): Promise<Owner>{
+        return await this.ownerModel.findByIdAndUpdate(updateOwnerDto.id, updateOwnerDto);
     }
 
 }

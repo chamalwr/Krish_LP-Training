@@ -1,9 +1,10 @@
-import { Body, Controller, Delete, Get, HttpCode, NotFoundException, Param, Post, UsePipes, ValidationPipe } from '@nestjs/common';
+import { Body, Controller, Delete, Get, HttpCode, NotFoundException, Param, Post, Put, UsePipes, ValidationPipe } from '@nestjs/common';
 import { AdminBranchValidationPipe } from './admin-branch-validation.pipe';
 import { Admin } from './admin.schema';
 import { AdminService } from './admin.service';
 import { CreateAdmin } from './create-admin.dto';
 import { SearchAdmin } from './search-admin.dto';
+import { UpdateAdminDto } from './update-admin.dto';
 
 
 @Controller('admin')
@@ -34,5 +35,10 @@ export class AdminController {
         if (!isDeleted) {
             throw new NotFoundException('Record not found to delete')
         }
+    }
+
+    @Put()
+    async updateAdmin(@Body() updateAdminDto: UpdateAdminDto): Promise<Admin> {
+        return this.adminService.updateAdmin(updateAdminDto);
     }
 }

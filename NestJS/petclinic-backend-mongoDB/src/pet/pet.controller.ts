@@ -1,7 +1,8 @@
-import { Controller, Get, Post, Param, Body, Delete, NotFoundException, HttpCode, UsePipes, ValidationPipe } from '@nestjs/common';
+import { Controller, Get, Post, Param, Body, Delete, NotFoundException, HttpCode, UsePipes, ValidationPipe, Put } from '@nestjs/common';
 import { CreatePetDto } from './create-pet.dto';
 import { Pet } from './pet.schema';
 import { PetService } from './pet.service';
+import { UpdatePetDto } from './update-pet.dto';
 
 @Controller('pet')
 export class PetController {
@@ -30,5 +31,10 @@ export class PetController {
     if(!this.petService.deletePetById(id)){
         throw new NotFoundException(`Pet Not Found : ${id}`);
     }
+  }
+
+  @Put()
+  updatePet(@Body() updatePetDto: UpdatePetDto) : Promise<Pet>{
+    return this.petService.updatePet(updatePetDto);
   }
 }

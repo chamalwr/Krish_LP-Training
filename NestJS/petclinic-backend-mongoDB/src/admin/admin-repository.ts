@@ -4,6 +4,7 @@ import { Model } from "mongoose";
 import { Admin, AdminDocument } from "./admin.schema";
 import { CreateAdmin } from "./create-admin.dto";
 import * as mongoose from 'mongoose';
+import { UpdateAdminDto } from "./update-admin.dto";
 
 
 @Injectable()
@@ -27,5 +28,9 @@ export class AdminRepository {
         let objId = mongoose.Types.ObjectId(id)
         let ret = await this.adminModel.deleteOne({ _id: objId })
         return (ret.n === 1)
+    }
+
+    async update(updateAdminDto: UpdateAdminDto): Promise<Admin> {
+        return await this.adminModel.findByIdAndUpdate(updateAdminDto.id, updateAdminDto);
     }
 }
