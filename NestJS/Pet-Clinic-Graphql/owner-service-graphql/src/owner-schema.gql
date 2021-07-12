@@ -1,0 +1,46 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Owner {
+  _id: String!
+  firstName: String!
+  lastName: String!
+  address: String!
+  zipCode: String!
+  contactNumber: String!
+  email: String!
+  petIds: String!
+}
+
+type Query {
+  getAllOwners: [Owner!]
+  getOwnerById(id: String!): Owner
+}
+
+type Mutation {
+  createOwner(createOwnerInput: CreateOwnerInput!): Owner!
+  updateOwner(updateOwnerInput: UpdateOwnerInput!): Owner
+  deleteOwner(id: String!): Owner
+}
+
+input CreateOwnerInput {
+  firstName: String!
+  lastName: String!
+  address: String!
+  zipCode: String!
+  contactNumber: String!
+  email: String!
+  petIds: String!
+}
+
+input UpdateOwnerInput {
+  firstName: String!
+  lastName: String!
+  address: String!
+  zipCode: String!
+  contactNumber: String!
+  email: String!
+  petIds: String!
+  _id: String!
+}
